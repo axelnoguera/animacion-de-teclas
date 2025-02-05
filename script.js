@@ -1,81 +1,57 @@
-let w = document.querySelector(".w");
-let a = document.querySelector(".a"); 
-let s = document.querySelector(".s"); 
-let d = document.querySelector(".d");
+document.addEventListener("keydown", function(e){
+  let tecla = e.key;
 
-let pw = document.querySelector(".pw"), pa = document.querySelector(".pa"), ps = document.querySelector(".ps"), pd = document.querySelector(".pd");
+  function animacion(w,a,s,d,botonW,botonA,botonS,botonD) {
 
-document.addEventListener("keydown", function (evento) {
-  let tecla = evento.keyCode;
+    switch(tecla){
+        case "w" :
+        botonW.classList.add("accion");
+        w.style.color = "#eea63a";
 
-  if(tecla == 87){
-    w.classList.add("accion");
-    pw.style.color = "#eea63a";
+        setTimeout(function(){
+          botonW.classList.remove("accion");
+          w.style.color = "#000";
+        },500);
+       break;
 
-    function accion(){
-      w.classList.remove("accion");
-      pw.style.color = "#000";
+
+        case "a" : 
+        botonA.classList.add("accion");
+        a.style.color = "#bb0404";
+
+        setTimeout(function(){
+        botonA.classList.remove("accion");
+        a.style.color = "#000";
+        }, 500);
+        break;
+
+
+        case "s" :
+        botonS.classList.add("accion");
+        s.style.color = "#eea63a";
+          
+      
+        setTimeout(function(){
+          botonS.classList.remove("accion");
+          s.style.color = "#000";
+        }, 500);
+        break;
+ 
+
+        case "d" :
+        botonD.classList.add("accion");
+        d.style.color = "#eea63a";
+      
+        setTimeout(function(){
+          botonD.classList.remove("accion");
+          d.style.color = "#000";
+        }, 500);
+        break;
     };
-
-    setTimeout(accion, 500);
+      
   };
 
-});
 
-
-document.addEventListener("keydown", function (evento) {
-  let tecla = evento.keyCode;
-  if(tecla == 65){
-    a.classList.add("accion");
-    pa.style.color = "#bb0404";
-
-    function accion(){
-      a.classList.remove("accion");
-      pa.style.color = "#000";
-
-    };
-
-    setTimeout(accion, 500);
-  };
+  animacion(document.querySelector(".w"),document.querySelector(".a"),document.querySelector(".s"),document.querySelector(".d"),document.querySelector(".boton-w"),document.querySelector(".boton-a"),document.querySelector(".boton-s"),document.querySelector(".boton-d"));
 
 });
-
-
-document.addEventListener("keydown", function (evento) {
-  let tecla = evento.keyCode;
-  if(tecla == 83){
-    s.classList.add("accion");
-    ps.style.color = "#eea63a";
-
-    function accion(){
-      s.classList.remove("accion");
-      ps.style.color = "#000";
-    };
-
-    setTimeout(accion, 500);
-  };
-
-});
-
-
-document.addEventListener("keydown", function (evento) {
-  let tecla = evento.keyCode;
-  if(tecla == 68){
-    d.classList.add("accion");
-    pd.style.color = "#eea63a";
-
-    function accion(){
-      d.classList.remove("accion");
-      pd.style.color = "#000";
-    };
-
-    setTimeout(accion, 500);
-  };
-
-});
-
-
-//w 87
-//a 65
-//s 83
-//d 68
